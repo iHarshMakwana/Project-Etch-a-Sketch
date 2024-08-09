@@ -1,5 +1,16 @@
+function createBoard(size){
+        const board = document.querySelector(".board");
 
-const container = document.querySelector("#container");
+        board.style.gridTemplateColumns=`repeat(${size},1fr)`;
+        board.style.gridTemplateRows=`repeat(${size},1fr)`;
 
+        let numDivs = size * size;
 
-console.log("HIII")
+        for(let i = 0;i < numDivs;i++){
+            let div = document.createElement("div");
+            div.style.backgroundColor= "yellow";
+            board.insertAdjacentElement("beforeend",div);
+        }
+}
+ 
+createBoard(10);
